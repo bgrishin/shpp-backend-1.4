@@ -1,0 +1,9 @@
+#text {
+    display: none;
+}
+
+#block {
+    height: 300px;
+    width: 300px;
+    background-color: yellow;
+}

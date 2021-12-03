@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task14</title>
+    <style>
+        p {
+            font-size: 20em;
+        }
+        button {
+            text-align: center;
+            visibility: hidden;
+            padding: 20px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Внимание! Эта страница не являеться гибкой! Она не настроена для разных устройств. Если у вас не 1920x1080 то что-бы увидеть результат поиграйтесь с размером окна.</h3>
+<p>⠀</p>
+<p>⠀</p>
+<!-- Здесь невидимые символы -->
+<p>⠀</p>
+<p>⠀</p>
+
+<button onclick="upScroll()" id="button">scroll up</button>
+<script>
+    const button = document.getElementById('button');
+
+    window.addEventListener("scroll",showButton);
+
+    function showButton() {
+        let level = document.documentElement.getBoundingClientRect().bottom;
+        if(level < 1000) {
+            button.style.visibility = "visible";
+        }
+    }
+
+    function upScroll() {
+        window.scroll({
+            top:0,
+            behavior:"smooth"
+        })
+    }
+
+</script>
+</body>
+</html>

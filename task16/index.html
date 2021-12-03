@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task16</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+    <style>
+        p {
+            font-size: 20em;
+        }
+        div {
+            font-family: 'Inconsolata', monospace;
+            text-align: center;
+            font-size: 50px;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-color: rgba(90,90,90,0.7);
+        }
+        div:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="button" onclick="hide()">don't click</button>
+    <div id="block" onclick="show()">oh man, why are you done this?</div>
+
+    <p>⠀</p>
+    <p>⠀</p>
+    <!-- Здесь невидимые символы -->
+    <p>⠀</p>
+    <p>⠀</p>
+
+    <h2>bikini bottom</h2>
+
+    <script>
+        function hide() {
+            document.getElementById('block').style.display = 'block'
+            document.documentElement.style.overflow = 'hidden'
+        }
+        function show() {
+            document.getElementById('block').style.display = 'none'
+            document.documentElement.style.overflow = 'scroll'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task15</title>
+</head>
+<body>
+    <div id="main" style="height: 500px; width: 500px; border-style: solid; border-color: gray; background: white">
+      <div id="submain" style="height: 250px; width: 250px; border-style: solid; border-color: gray; background: gray">
+
+      </div>
+    </div>
+
+    <script>
+        const main = document.getElementById('main')
+        const submain = document.getElementById('submain')
+
+        main.addEventListener("click",() => alert("BIG"));
+        submain.addEventListener("click",(event) => {
+            alert("SMALL");
+            event.stopPropagation();
+        });
+    </script>
+</body>
+</html>

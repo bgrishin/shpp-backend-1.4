@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task10</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+    <style>
+        div {
+            height: 100%;
+            width: 100%;
+            padding-bottom: 40%;
+            padding-top: 10%;
+            text-align: center;
+            size: A4;
+            background-color: gray;
+
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            overflow: paged-y;
+        }
+
+        p {
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Inconsolata', monospace;
+        }
+    </style>
+</head>
+<body onmousemove="xy()">
+    <div>
+        <p id="textXY">X: Y:</p>
+        <p id="textLANG"></p>
+        <p id="textPOS">Ш: Д:</p>
+    </div>
+    <script>
+        let text = document.getElementById('textXY')
+        const language = navigator.language
+        function xy() {
+            text.innerText = `X: ${event.screenX},Y: ${event.screenY}`
+        }
+        document.getElementById('textLANG').innerHTML = language
+
+        navigator.geolocation?.getCurrentPosition(pos => {
+            const text = document.getElementById('textPOS');
+            const latitude = pos.coords.latitude;
+            const longitude = pos.coords.longitude;
+
+            text.innerHTML = `Ш: ${latitude}, Д: ${longitude}`;
+        })
+    </script>
+</body>
+</html>
