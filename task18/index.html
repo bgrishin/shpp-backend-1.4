@@ -1,63 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-    <title>Task18</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
-    <style>
-        #input-file {
-            background-color: blue;
-            color: white;
-        }
-
-        #button {
-            font-family: 'Inconsolata', monospace;
-            color: white;
-            background-color: #262626;
-            font-size: 30px;
-            cursor: pointer;
-            position: absolute;
-            top: 40px;
-            left: 40px;
-            text-align: center;
-            padding: 50px 20px 50px 20px;
-            height: 60px;
-            width: 150px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            border-style: dashed;
-            border-color: #6e6e6e;
-            border-radius: 10px;
-            transition: box-shadow 500ms, transform 500ms;
-        }
-
-        #button:hover {
-            box-shadow: 0px 0px 10px black;
-            transform: scale(1.05,1.05);
-        }
-
-        h2 {
-            position: absolute;
-            top: 200px
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Drag'n Drop (TASK 18)</title>
+    <script src="https://kit.fontawesome.com/1a6c635495.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-<div class="block">
-    <input type="file" name="file" id="input-file" onchange="change()">
-    <label for="input-file" id="button">Upload File</label>
-    <script>
-        function change() {
-            let button = document.getElementById('button')
-            const path = document.getElementById('input-file').value.split('\\\\')
-            const splitted = path[path.length - 1].split('\\')
-            button.innerText = 'Uploaded! ' + splitted[splitted.length - 1]
-            button.style.backgroundColor = '#00c851'
-            button.style.borderStyle = 'none'
-            button.style.boxShadow = '0px 0px 4px black'
-        }
-    </script>
-</div>
-<h2>Drag'n drop засовывать в синюю зону</h2>
+    <div class="area">
+        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <header>Drag & Drop</header>
+        <span>OR</span>
+        <button>Browse File</button>
+    </div>
+    <script src="script/main.js"></script>
 </body>
 </html>
